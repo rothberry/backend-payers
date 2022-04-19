@@ -7,8 +7,11 @@ class TransactionsController < ApplicationController
         render json: {points: Transaction.sum(&:points)}
     end
 
-    # ? POST /transaction
+    # ? POST /add_transaction
     # finds by payer and adds points
     # returns new user hash
+    def add_transaction
+        
+    end
 
 end

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   # resources :transactions
   get '/point_total', to: "transactions#point_total"
+  post '/add_transaction', to: "transaction#add_transaction"
 
 end
