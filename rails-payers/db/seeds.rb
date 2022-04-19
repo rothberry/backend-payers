@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+puts "RESETING DATABASE..."
+Transaction.delete_all
+
+puts "SEEDING..."
+Transaction.create(payer: "DANNON", points: 1000)
+Transaction.create(payer: "UNILEVER", points: 10)
+Transaction.create(payer: "MILLER COORS", points: 0)
+
+puts "DONE!"

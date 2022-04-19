@@ -1,0 +1,70 @@
+  [1m[35m (391.4ms)[0m  [1m[35mCREATE DATABASE "rails_payers_development" ENCODING = 'unicode'[0m
+  [1m[35m (366.5ms)[0m  [1m[35mCREATE DATABASE "rails_payers_test" ENCODING = 'unicode'[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1237995450151383420)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTransactions (20220419192109)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "payer" character varying, "points" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220419192109"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-19 19:23:21.791319"], ["updated_at", "2022-04-19 19:23:21.791319"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1237995450151383420)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Delete All (0.6ms)[0m  [1m[31mDELETE FROM "transactions"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("payer", "points", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["payer", "DANNON"], ["points", 1000], ["created_at", "2022-04-19 19:23:32.954656"], ["updated_at", "2022-04-19 19:23:32.954656"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("payer", "points", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["payer", "UNILEVER"], ["points", 10], ["created_at", "2022-04-19 19:23:32.965534"], ["updated_at", "2022-04-19 19:23:32.965534"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("payer", "points", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["payer", "MILLER COORS"], ["points", 0], ["created_at", "2022-04-19 19:23:32.973918"], ["updated_at", "2022-04-19 19:23:32.973918"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+Started GET "/" for 127.0.0.1 at 2022-04-19 12:29:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 667)
+Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 6306)
+
+
+Started GET "/point_total" for 127.0.0.1 at 2022-04-19 12:30:02 -0700
+Processing by TransactionsController#point_total as */*
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1946)
+
+
+  
+NameError (undefined local variable or method `debug' for #<TransactionsController:0x000000000086d8>
+Did you mean?  debugger):
+  
+app/controllers/transactions_controller.rb:6:in `point_total'
+Started GET "/point_total" for 127.0.0.1 at 2022-04-19 12:30:12 -0700
+Processing by TransactionsController#point_total as */*
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/controllers/transactions_controller.rb:6:in `point_total'
+  [1m[36mCACHE Transaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `point_total'
+Completed 500 Internal Server Error in 98418ms (ActiveRecord: 3.8ms | Allocations: 216582)
+
+
+  
+SystemExit (exit):
+  
+(rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `exit'
+(rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `point_total'
+app/controllers/transactions_controller.rb:6:in `point_total'
+Started GET "/point_total" for 127.0.0.1 at 2022-04-19 12:32:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#point_total as */*
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/controllers/transactions_controller.rb:7:in `point_total'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 17925)
+
+
