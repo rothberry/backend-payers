@@ -2,9 +2,9 @@ class TransactionsController < ApplicationController
 
     # ? GET /point_total
     # returns total points for all users
-    def point_total
+    def spend_points
         # debugger
-        render json: {points: Transaction.sum(&:points)}
+        # render json: {points: Transaction.sum(&:points)}
     end
 
     # ? POST /add_transaction
@@ -12,6 +12,12 @@ class TransactionsController < ApplicationController
     # returns new user hash
     def add_transaction
         
+    end
+
+    private
+
+    def transaction_params
+        params.permit(:user_id, :payer_id, :points, :timestamp)
     end
 
 end

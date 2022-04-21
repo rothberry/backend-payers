@@ -9,10 +9,27 @@
 
 puts "RESETING DATABASE..."
 Transaction.delete_all
+User.delete_all
+Payer.delete_all
+
 
 puts "SEEDING..."
-Transaction.create(payer: "DANNON", points: 1000)
-Transaction.create(payer: "UNILEVER", points: 10)
-Transaction.create(payer: "MILLER COORS", points: 0)
+
+puts "CREATING USERS..."
+u1 = User.create(name: "test_user_1")
+u2 = User.create(name: "test_user_2")
+
+puts "CREATING PAYERS..."
+dannon = Payer.create(name: "DANNON")
+unilever = Payer.create(name: "UNILEVER")
+coors = Payer.create(name: "MILLER COORS")
+
+
+puts "CREATING TRANSACTIONS..."
+Transaction.create(user: u1, payer: dannon, points: 1000, timestamp: DateTime.now.utc)
+sleep 1
+Transaction.create(user: u1, payer: unilever, points: 10, timestamp: DateTime.now.utc)
+sleep 1
+Transaction.create(user: u1, payer: coors, points: 0, timestamp: DateTime.now.utc)
 
 puts "DONE!"

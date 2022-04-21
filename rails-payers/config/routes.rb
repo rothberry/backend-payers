@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   # resources :transactions
-  get '/point_total', to: "transactions#point_total"
-  post '/add_transaction', to: "transaction#add_transaction"
+  resources :users, only: [:create, :show]
+  resources :payers, only: [:create, :show, :index]
+  post '/spend_points', to: "transactions#spend_points"
+  post '/add_transaction', to: "transactions#add_transaction"
 
 end
