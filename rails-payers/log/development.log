@@ -874,3 +874,455 @@ Processing by TransactionsController#add_transaction as */*
 Completed 204 No Content in 0ms (Allocations: 33)
 
 
+Started GET "/transactions" for 127.0.0.1 at 2022-04-25 14:09:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#index as */*
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mPayer Load (0.2ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+Completed 200 OK in 63ms (Views: 37.3ms | ActiveRecord: 9.8ms | Allocations: 36418)
+
+
+Started GET "/transactions/1" for 127.0.0.1 at 2022-04-25 14:10:47 -0700
+Processing by TransactionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `show'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 3918)
+
+
+Started GET "/transactions/3" for 127.0.0.1 at 2022-04-25 14:10:50 -0700
+Processing by TransactionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 593)
+
+
+Started GET "/transactions/10" for 127.0.0.1 at 2022-04-25 14:10:54 -0700
+Processing by TransactionsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `show'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 565)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-04-25 14:10:59 -0700
+Processing by TransactionsController#index as */*
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `index'
+Completed 200 OK in 33ms (Views: 26.6ms | ActiveRecord: 6.3ms | Allocations: 11431)
+
+
+Started POST "/add_transaction" for 127.0.0.1 at 2022-04-25 14:12:54 -0700
+Processing by TransactionsController#add_transaction as */*
+  Parameters: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}}
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "asjlfgh"], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "INBEV"], ["LIMIT", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mPayer Create (11.5ms)[0m  [1m[32mINSERT INTO "payers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "INBEV"], ["created_at", "2022-04-25 21:18:10.036476"], ["updated_at", "2022-04-25 21:18:10.036476"]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+Completed 500 Internal Server Error in 458322ms (ActiveRecord: 22.8ms | Allocations: 361554)
+
+
+  
+SystemExit (exit):
+  
+(rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `exit'
+(rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `add_transaction'
+app/controllers/transactions_controller.rb:14:in `add_transaction'
+Started POST "/add_transaction" for 127.0.0.1 at 2022-04-25 14:21:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#add_transaction as */*
+  Parameters: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:14:in `add_transaction'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:15:in `add_transaction'
+Completed   in 33007ms (ActiveRecord: 8.2ms | Allocations: 132697)
+
+
+Started POST "/add_transaction" for 127.0.0.1 at 2022-04-25 14:21:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#add_transaction as */*
+  Parameters: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:14:in `add_transaction'
+  [1m[36mPayer Load (0.8ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:15:in `add_transaction'
+[31mUnpermitted parameters: :user_id, :payer, :transaction. Context: { controller: TransactionsController, action: add_transaction, request: #<ActionDispatch::Request:0x00007f0804a31ac0>, params: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "controller"=>"transactions", "action"=>"add_transaction", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}} }[0m
+[31mUnpermitted parameters: :user_id, :payer, :transaction. Context: { controller: TransactionsController, action: add_transaction, request: #<ActionDispatch::Request:0x00007f0804a31ac0>, params: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "controller"=>"transactions", "action"=>"add_transaction", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}} }[0m
+Completed   in 121529ms (ActiveRecord: 9.4ms | Allocations: 353868)
+
+
+Started POST "/add_transaction" for 127.0.0.1 at 2022-04-25 14:24:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#add_transaction as */*
+  Parameters: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:14:in `add_transaction'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:15:in `add_transaction'
+[31mUnpermitted parameters: :user_id, :transaction. Context: { controller: TransactionsController, action: add_transaction, request: #<ActionDispatch::Request:0x00007f9c011aec68>, params: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "controller"=>"transactions", "action"=>"add_transaction", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}} }[0m
+[31mUnpermitted parameters: :user_id, :payer, :points, :timestamp, :transaction. Context: { controller: TransactionsController, action: add_transaction, request: #<ActionDispatch::Request:0x00007f9c011aec68>, params: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "controller"=>"transactions", "action"=>"add_transaction", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}} }[0m
+Completed 500 Internal Server Error in 89187ms (ActiveRecord: 8.0ms | Allocations: 261565)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<TransactionsController:0x00000000009240>):
+  
+app/controllers/transactions_controller.rb:17:in `add_transaction'
+Started POST "/add_transaction" for 127.0.0.1 at 2022-04-25 14:25:36 -0700
+Processing by TransactionsController#add_transaction as */*
+  Parameters: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:14:in `add_transaction'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:15:in `add_transaction'
+Completed 500 Internal Server Error in 1456ms (ActiveRecord: 0.7ms | Allocations: 62373)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<TransactionsController:0x00000000009308>):
+  
+app/controllers/transactions_controller.rb:17:in `add_transaction'
+Started POST "/add_transaction" for 127.0.0.1 at 2022-04-25 14:26:13 -0700
+Processing by TransactionsController#add_transaction as */*
+  Parameters: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:14:in `add_transaction'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:15:in `add_transaction'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:17:in `add_transaction'
+  [1m[36mTransaction Create (1.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "payer_id", "points", "timestamp") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["payer_id", 1], ["points", 1000], ["timestamp", "2020-11-02 14:00:00"]]
+  ↳ app/controllers/transactions_controller.rb:17:in `add_transaction'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:17:in `add_transaction'
+Completed 200 OK in 39ms (Views: 0.6ms | ActiveRecord: 11.6ms | Allocations: 13712)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-04-25 14:26:41 -0700
+Processing by TransactionsController#index as */*
+  [1m[36mTransaction Load (1.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mPayer Load (0.2ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:22:in `index'
+Completed 200 OK in 74ms (Views: 52.8ms | ActiveRecord: 15.7ms | Allocations: 17139)
+
+
+Started GET "/total_points/1" for 127.0.0.1 at 2022-04-25 14:27:29 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/total_points/1"):
+  
+Started GET "/users/1/total_points" for 127.0.0.1 at 2022-04-25 14:30:23 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#total_points as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `find_user'
+Completed 204 No Content in 31ms (ActiveRecord: 6.0ms | Allocations: 20056)
+
+
+Started GET "/users/1/total_points" for 127.0.0.1 at 2022-04-25 14:30:37 -0700
+  
+SyntaxError (/home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/users_controller.rb:11: syntax error, unexpected `end'
+    end
+    ^~~
+/home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:11: syntax error, unexpected `end'
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:11: syntax error, unexpected `end'
+app/controllers/users_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users/1/total_points" for 127.0.0.1 at 2022-04-25 14:30:40 -0700
+Processing by UsersController#total_points as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `find_user'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `total_points'
+  [1m[36mTransaction Sum (0.5ms)[0m  [1m[34mSELECT SUM("transactions"."points") FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ (rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/users_controller.rb:1:in `total_points'
+Completed 204 No Content in 67509ms (ActiveRecord: 6.7ms | Allocations: 153177)
+
+
+Started GET "/users/1/total_points" for 127.0.0.1 at 2022-04-25 14:32:07 -0700
+Processing by UsersController#total_points as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `find_user'
+  [1m[36mTransaction Sum (0.4ms)[0m  [1m[34mSELECT SUM("transactions"."points") FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8:in `total_points'
+Completed 200 OK in 2860ms (Views: 0.2ms | ActiveRecord: 9.0ms | Allocations: 69372)
+
+
+Started POST "/add_transaction" for 127.0.0.1 at 2022-04-25 14:35:08 -0700
+Processing by TransactionsController#add_transaction as */*
+  Parameters: {"user_id"=>1, "payer"=>"DANNON", "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z", "transaction"=>{"user_id"=>1, "points"=>1000, "timestamp"=>"2020-11-02T14:00:00Z"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `add_transaction'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."name" = $1 LIMIT $2[0m  [["name", "DANNON"], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:8:in `add_transaction'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `add_transaction'
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "payer_id", "points", "timestamp") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["payer_id", 1], ["points", 1000], ["timestamp", "2020-11-02 14:00:00"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `add_transaction'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `add_transaction'
+Completed 200 OK in 31ms (Views: 0.5ms | ActiveRecord: 11.7ms | Allocations: 9802)
+
+
+Started GET "/users/1/total_points" for 127.0.0.1 at 2022-04-25 14:35:13 -0700
+Processing by UsersController#total_points as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `find_user'
+  [1m[36mTransaction Sum (0.5ms)[0m  [1m[34mSELECT SUM("transactions"."points") FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8:in `total_points'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1220)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:37:05 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "transaction"=>{"points"=>2500}}
+[31mUnpermitted parameter: :transaction. Context: { controller: TransactionsController, action: spend_points, request: #<ActionDispatch::Request:0x00007fb67d2103c8>, params: {"points"=>2500, "controller"=>"transactions", "action"=>"spend_points", "transaction"=>{"points"=>2500}} }[0m
+Completed 204 No Content in 40415ms (ActiveRecord: 1.4ms | Allocations: 98523)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:37:47 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "test"=>"test", "transaction"=>{"points"=>2500}}
+[31mUnpermitted parameters: :test, :transaction. Context: { controller: TransactionsController, action: spend_points, request: #<ActionDispatch::Request:0x00007fb67d29df98>, params: {"points"=>2500, "test"=>"test", "controller"=>"transactions", "action"=>"spend_points", "transaction"=>{"points"=>2500}} }[0m
+Completed 204 No Content in 38285ms (ActiveRecord: 0.0ms | Allocations: 63030)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:38:26 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "test"=>"test", "user"=>"test", "transaction"=>{"points"=>2500}}
+[31mUnpermitted parameters: :test, :user, :transaction. Context: { controller: TransactionsController, action: spend_points, request: #<ActionDispatch::Request:0x00007fb67ce66ce0>, params: {"points"=>2500, "test"=>"test", "user"=>"test", "controller"=>"transactions", "action"=>"spend_points", "transaction"=>{"points"=>2500}} }[0m
+Completed 204 No Content in 9903ms (ActiveRecord: 0.0ms | Allocations: 61916)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:38:37 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "test"=>"test", "user"=>"test", "transaction"=>{"points"=>2500}}
+[31mUnpermitted parameters: :test, :transaction. Context: { controller: TransactionsController, action: spend_points, request: #<ActionDispatch::Request:0x00007fb67cc05c08>, params: {"points"=>2500, "test"=>"test", "user"=>"test", "controller"=>"transactions", "action"=>"spend_points", "transaction"=>{"points"=>2500}} }[0m
+[31mUnpermitted parameters: :test, :transaction. Context: { controller: TransactionsController, action: spend_points, request: #<ActionDispatch::Request:0x00007fb67cc05c08>, params: {"points"=>2500, "test"=>"test", "user"=>"test", "controller"=>"transactions", "action"=>"spend_points", "transaction"=>{"points"=>2500}} }[0m
+Completed 204 No Content in 30540ms (ActiveRecord: 3.9ms | Allocations: 89660)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:39:23 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "user_id"=>1, "transaction"=>{"user_id"=>1, "points"=>2500}}
+Completed 204 No Content in 13165ms (ActiveRecord: 0.0ms | Allocations: 59313)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:39:37 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "user_id"=>1, "transaction"=>{"user_id"=>1, "points"=>2500}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:17:in `spend_points'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `spend_points'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 ORDER BY "transactions"."timestamp" ASC[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `spend_points'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 ORDER BY "timestampc" ASC[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:18:in `spend_points'
+Completed 204 No Content in 105144ms (ActiveRecord: 7.1ms | Allocations: 137671)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:41:24 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "user_id"=>1, "transaction"=>{"user_id"=>1, "points"=>2500}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:17:in `spend_points'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:21:in `spend_points'
+Completed 204 No Content in 724686ms (ActiveRecord: 5.4ms | Allocations: 304874)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 14:53:31 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "user_id"=>1, "transaction"=>{"user_id"=>1, "points"=>2500}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:17:in `spend_points'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:24:in `spend_points'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:29:in `spend_points'
+Completed 500 Internal Server Error in 28437ms (ActiveRecord: 14.5ms | Allocations: 1265957)
+
+
+  
+SystemExit (exit):
+  
+(rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `exit'
+(rdbg)//home/rothberry/dev/projects/fetch/backend-payers/rails-payers/app/controllers/transactions_controller.rb:1:in `spend_points'
+app/controllers/transactions_controller.rb:25:in `spend_points'
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 15:09:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "user_id"=>1, "transaction"=>{"user_id"=>1, "points"=>2500}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:17:in `spend_points'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:24:in `spend_points'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 15:09:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "user_id"=>1, "transaction"=>{"user_id"=>1, "points"=>2500}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:17:in `spend_points'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:24:in `spend_points'
+  [1m[36mPayer Load (0.2ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:32:in `spend_points'
+Completed 200 OK in 52ms (Views: 0.4ms | ActiveRecord: 10.0ms | Allocations: 35202)
+
+
+Started POST "/spend_points" for 127.0.0.1 at 2022-04-25 15:10:07 -0700
+Processing by TransactionsController#spend_points as */*
+  Parameters: {"points"=>2500, "user_id"=>1, "transaction"=>{"user_id"=>1, "points"=>2500}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:17:in `spend_points'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/transactions_controller.rb:24:in `spend_points'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:28:in `spend_points'
+  [1m[36mCACHE Payer Load (0.1ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:32:in `spend_points'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 4053)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-04-25 15:10:14 -0700
+Processing by TransactionsController#index as */*
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mPayer Load (0.3ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE Payer Load (0.2ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 2.2ms | Allocations: 8661)
+
+
+Started GET "/users/1/total_points" for 127.0.0.1 at 2022-04-25 15:10:23 -0700
+Processing by UsersController#total_points as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `find_user'
+  [1m[36mTransaction Sum (0.4ms)[0m  [1m[34mSELECT SUM("transactions"."points") FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8:in `total_points'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1193)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-04-25 15:10:55 -0700
+Processing by TransactionsController#index as */*
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mPayer Load (0.2ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mPayer Load (0.2ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mPayer Load (2.9ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+  [1m[36mCACHE Payer Load (0.0ms)[0m  [1m[34mSELECT "payers".* FROM "payers" WHERE "payers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:43:in `index'
+Completed 200 OK in 35ms (Views: 23.0ms | ActiveRecord: 8.5ms | Allocations: 11020)
+
+
+Started GET "/payers" for 127.0.0.1 at 2022-04-25 15:13:50 -0700
+Processing by PayersController#index as */*
+  [1m[36mPayer Load (0.4ms)[0m  [1m[34mSELECT "payers".* FROM "payers"[0m
+  ↳ app/controllers/payers_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 3.7ms | ActiveRecord: 3.5ms | Allocations: 3925)
+
+

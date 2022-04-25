@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show, :index]
   resources :payers, only: [:create, :show, :index]
   resources :transactions, only: [:show, :index]
+  
+  get '/users/:id/total_points', to: "users#total_points"
   post '/spend_points', to: "transactions#spend_points"
   post '/add_transaction', to: "transactions#add_transaction"
 
