@@ -14,33 +14,44 @@ class TransactionsController < ApplicationController
     
     # ? POST /spend_points
     def spend_points
+        puts "***SPENDING POINTS***"
         current_user = User.find(params[:user_id])
-        current_total = params[:points]
-
-        output = []
-
-        i = 0
-
-        while current_total > 0 && current_user.transactions.length > i
-            current_transaction = current_user.transactions[i]
-            current_total -= current_transaction.points
-            if current_total >= 0
-                output << {payer: current_transaction.payer.name, points: -current_transaction.points}
-                current_transaction.points = 0
-            else
-                current_transaction.points = current_total.abs
-                output << {payer: current_transaction.payer.name, points: -current_total}
-                
+        current_total = params[:points].to_i
+        # If user doesn't have enough total points, send error message
+        if current_total > current_user.total_points
+            render json: {error: "NOT ENOUGH POINTS"}, status: :unprocessable_entity
+        else
+            output = []
+            i = 0
+            while current_total > 0 && current_user.transactions.length > i
+                current_transaction = current_user.transactions[i]
+                if current_transaction.points == 0 
+                    i += 1
+                else
+                    p "trans----"
+                    p current_transaction
+                    current_total -= current_transaction.points
+                    p "total-----"
+                    p current_total
+                    if current_total >= 0
+                        output << {payer: current_transaction.payer.name, points: -current_transaction.points}
+                        current_transaction.points = 0
+                    else
+                        # debugger
+                        output << {payer: current_transaction.payer.name, points: -(current_transaction.points + current_total)}
+                        current_transaction.points = current_total.abs
+                    end
+                    current_transaction.save
+                    i+=1
+                end
             end
-            # current_transaction.save
-            i+=1
+            # debugger
+            render json: output
         end
-        # debugger
-        render json: output
     end
 
     def index
-        render json: Transaction.all, include: [:payer]
+        render json: Transaction.order(:timestamp), include: [:payer]
     end
 
     def show

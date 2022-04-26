@@ -28,8 +28,8 @@ coors = Payer.create(name: "MILLER COORS")
 puts "CREATING TRANSACTIONS..."
 Transaction.create(user: u1, payer: dannon, points: 1000, timestamp: DateTime.now.utc)
 sleep 1
-Transaction.create(user: u1, payer: unilever, points: 10, timestamp: DateTime.now.utc)
+Transaction.create(user: u1, payer: unilever, points: 2000, timestamp: DateTime.now.utc)
 sleep 1
-Transaction.create(user: u1, payer: coors, points: 0, timestamp: DateTime.now.utc)
+Transaction.create(user: u1, payer: coors, points: 3000, timestamp: DateTime.now.utc)
 
 puts "DONE!"
