@@ -5,11 +5,11 @@
 # below each fixture, per the syntax in the comments below
 #
 
-one: 
+# ! GOOD DATA
+phil: 
   name: "phil"
 #
-# ! GOOD DATA
-two: 
+jill: 
   name: "jill"
 # column: value
 
