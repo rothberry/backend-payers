@@ -1,12 +1,9 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
   puts "TESTING USERS..."
   setup :setup_users
-  # teardown :remove_users
 
   test "user created successfully" do
     user = User.new(name: "Phil")
@@ -24,19 +21,11 @@ class UserTest < ActiveSupport::TestCase
 
   test "user has many transactions" do
     # debugger
-    assert @phil.class == Transaction::ActiveRecord_Associations_CollectionProxy
+    assert @phil.transactions.class.to_s == "Transaction::ActiveRecord_Associations_CollectionProxy"
   end
   
-  private 
-  
-  def setup_users
-    @phil = users(:phil)
-    @jill = users(:jill)
-  end
-
-  def remove_users
-    @phil = nil
-    @jill = nil
+  test "user has many payers through transactions" do
+    assert @phil.payers.class.to_s == "Payer::ActiveRecord_Associations_CollectionProxy"
   end
 
 end

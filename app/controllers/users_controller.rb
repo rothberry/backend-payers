@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
 
+    def index
+        render json: User.all
+    end
+
     def show
         render json: find_user
     end
 
     def create
-        render json: User.create!(user_params), staus: 201
+        render json: User.create!(user_params), staus: :created
     end
     
     def total_points

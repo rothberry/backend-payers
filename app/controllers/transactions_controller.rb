@@ -28,16 +28,15 @@ class TransactionsController < ApplicationController
                 if current_transaction.points == 0 
                     i += 1
                 else
-                    p "trans----"
-                    p current_transaction
+                    # p "trans----"
+                    # p current_transaction
                     current_total -= current_transaction.points
-                    p "total-----"
-                    p current_total
+                    # p "total-----"
+                    # p current_total
                     if current_total >= 0
                         output << {payer: current_transaction.payer.name, points: -current_transaction.points}
                         current_transaction.points = 0
                     else
-                        # debugger
                         output << {payer: current_transaction.payer.name, points: -(current_transaction.points + current_total)}
                         current_transaction.points = current_total.abs
                     end
